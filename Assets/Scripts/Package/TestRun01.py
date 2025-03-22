@@ -227,8 +227,8 @@ class TestRun01(ctk.CTkFrame):  # class for the TestRun01 window
         pressure_values.append(pressure)
         #temperature_values.append(temperature)
 
-        ean_temp = round(np.mean(temperature_values), 2)
-        elf.temp_label.configure(text=f"Ø {mean_temp}°C")
+        #mean_temp = round(np.mean(temperature_values), 2)
+        #self.temp_label.configure(text=f"Ø {mean_temp}°C")
 
         # Abbruchbedingung zu hoher Druck
         if pressure >= maxAllowedPressure:
