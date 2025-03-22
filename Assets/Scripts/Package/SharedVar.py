@@ -11,9 +11,9 @@ from .JsonFunctions import json_reader
 
 # path when on raspberry pi for the .desktop execution file to work
 main_pi_location = "/home/admin/Schweisspruefung/Optimierung-einer-Schweisspruefanlage/Assets/Scripts/"
-#w1temp_base_dir = "/sys/bus/w1/devices/"
-#device_folder = glob.glob(w1temp_base_dir + "28*")[0]
-#w1temp_location = device_folder + "/w1_slave"
+w1temp_base_dir = "/sys/bus/w1/devices/"
+device_folder = glob.glob(w1temp_base_dir + "28*")[0]
+w1temp_location = device_folder + "/w1_slave"
 
 
 # path when on PyCharm

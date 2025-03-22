@@ -13,7 +13,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from .JsonFunctions import json_reader, json_writer
 from ina219 import INA219
 # Shared variables----------------------------------------
-from .SharedVar import GetStartupVariables, back_arrow_image, main_pi_location#, w1temp_location
+from .SharedVar import GetStartupVariables, back_arrow_image, main_pi_location, w1temp_location
 from datetime import datetime, timedelta
 from fpdf import FPDF
 from fpdf.enums import XPos, YPos
@@ -35,7 +35,7 @@ GPIO.setup(14, GPIO.OUT)
 GPIO.output(14, False)
 output = 0
 
-"""ina = INA219(shunt_ohms=0.1,
+ina = INA219(shunt_ohms=0.1,
              max_expected_amps=0.6,
              address=0x40,
              busnum=1)
@@ -43,7 +43,7 @@ output = 0
 ina.configure(voltage_range=ina.RANGE_16V,
               gain=ina.GAIN_AUTO,
               bus_adc=ina.ADC_128SAMP,
-              shunt_adc=ina.ADC_128SAMP)"""
+              shunt_adc=ina.ADC_128SAMP)
 
 pressure_values = [0, 0]
 temperature_values = []
@@ -200,7 +200,7 @@ class TestRun01(ctk.CTkFrame):  # class for the TestRun01 window
         global completeTimeStart
 
         # for testing
-        global pressure_current
+        #global pressure_current
         # ------
 
         # timestep management
@@ -210,8 +210,8 @@ class TestRun01(ctk.CTkFrame):  # class for the TestRun01 window
         test_timesteps.append(seconds_passed)
 
         # get values from sensors
-        #temperature = self.get_temperature_w1()
-        #pressure_current = ina.current()
+        temperature = self.get_temperature_w1()
+        pressure_current = ina.current()
 
         # Pressure Calculation
         MBEWe = 60  # Messbereichsendwert Druck in Bar
@@ -225,10 +225,10 @@ class TestRun01(ctk.CTkFrame):  # class for the TestRun01 window
 
         print(f"Pressure = {pressure}")
         pressure_values.append(pressure)
-        #temperature_values.append(temperature)
+        temperature_values.append(temperature)
 
-        #mean_temp = round(np.mean(temperature_values), 2)
-        #self.temp_label.configure(text=f"Ø {mean_temp}°C")
+        mean_temp = round(np.mean(temperature_values), 2)
+        self.temp_label.configure(text=f"Ø {mean_temp}°C")
 
         # Abbruchbedingung zu hoher Druck
         if pressure >= maxAllowedPressure:
@@ -317,13 +317,13 @@ class TestRun01(ctk.CTkFrame):  # class for the TestRun01 window
         self.canvas.draw()
 
     def get_temperature_w1(self):
-        """f = open(w1temp_location, "r")
+        f = open(w1temp_location, "r")
         lines = f.readlines()
         f.close()
         temp_pos = lines[1].find("t=")
         if temp_pos != 1:
             temperature = float(int(lines[1][temp_pos + 2:]) / 1000)
-        return temperature"""
+        return temperature
 
     def cancel_after_on_closing(self):
         global timer_id

@@ -240,40 +240,6 @@ class NewTestScreen04(ctk.CTkFrame):  # class for the NewTestScreen04 window
         self.info3_entry_unchanged_overlay_label.place(x=10,
                                                        rely=0.1)
 
-        """
-        # info4 entry------------------------------------------------------------
-        self.info4_entry_label = ctk.CTkLabel(master=self.entry_frame2,
-                                              fg_color=GetStartupVariables.color_SET_blue,
-                                              corner_radius=10,
-                                              text="Prüfdauer (Regelung) [min]",
-                                              text_color=GetStartupVariables.text_color_SET,
-                                              font=("bold", font_size),
-                                              width=font_size * 25,
-                                              height=font_size * 1.5)
-        self.info4_entry_label.place(x=10,
-                                     y=10)
-
-        self.info4_entry = ctk.CTkEntry(master=self.entry_frame2,
-                                        font=("bold", font_size),
-                                        state="disabled"
-                                        )
-        self.info4_entry.place(x=10,
-                               y=15 + font_size * 1.5)
-
-        self.info4_entry_unchanged_overlay_label_frame = ctk.CTkFrame(master=self.entry_frame2,
-                                                                      corner_radius=10,
-                                                                      width=window_geometry[0] / 6,
-                                                                      height=font_size * 1.5)
-        self.info4_entry_unchanged_overlay_label_frame.place(x=10,
-                                                             y=15 + font_size * 1.5)
-
-        self.info4_entry_unchanged_overlay_label = ctk.CTkLabel(
-            master=self.info4_entry_unchanged_overlay_label_frame,
-            text=GetItemVariables.infos_item[4],
-            font=("bold", font_size))
-        self.info4_entry_unchanged_overlay_label.place(x=10,
-                                                       rely=0.1)"""
-
         # info5 entry------------------------------------------------------------
         self.info5_entry_label = ctk.CTkLabel(master=self.entry_frame2,
                                               fg_color=GetStartupVariables.color_SET_blue,
