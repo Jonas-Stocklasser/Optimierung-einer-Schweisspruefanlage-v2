@@ -456,6 +456,7 @@ class NewTestScreen04(ctk.CTkFrame):  # class for the NewTestScreen04 window
                       self.info1_entry.get(),
                       self.info2_entry.get(),
                       self.info3_entry.get(),
+                      "0",
                       self.info5_entry.get(),
                       self.info6_entry.get()]
 
