@@ -262,6 +262,7 @@ class TestRun01(ctk.CTkFrame):  # class for the TestRun01 window
         global duration
         global height
         global maxAllowedPressure
+        global completeTimeStart
 
         # Error when Sensor current is below 4mA
         if pressure_current < 4:
@@ -276,6 +277,8 @@ class TestRun01(ctk.CTkFrame):  # class for the TestRun01 window
             exam_parameter = json_reader(personal_json_name, "exam_parameter", personal_folder_path)
 
             maxAllowedPressure = float(exam_parameter[0])
+
+            completeTimeStart = datetime.now()
 
             timer_id = self.after(int(Zeitinkrement * 1000), self.to_do)
             self.pdf_button.configure(state="disabled")
