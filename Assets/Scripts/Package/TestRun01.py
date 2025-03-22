@@ -498,11 +498,6 @@ class TestRun01(ctk.CTkFrame):  # class for the TestRun01 window
         pdf.cell(60, 10, f"{mean_temp}°C", border=False, align="L", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 
         pdf.cell(10, 10, "", border=False, align="L")
-        pdf.cell(40, 10, "Dauerprüfdruck:", border=False, align="L")
-        pdf.cell(10, 10, "", border=False, align="L")
-        pdf.cell(60, 10, f"{round(pressureControlMiddle, 2)} bar", border=False, align="L", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
-
-        pdf.cell(10, 10, "", border=False, align="L")
         pdf.cell(40, 10, "Berstdruck:", border=False, align="L")
         pdf.cell(10, 10, "", border=False, align="L")
         pdf.cell(60, 10, f"{failure_pressure} bar", border=False, align="L", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
