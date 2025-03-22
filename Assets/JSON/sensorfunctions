@@ -1,0 +1,17 @@
+    def start_sensor(self):
+        global timer_id
+        timer_id = self.after(1000, self.toDoS)
+        self.test_button.configure(state="disabled")
+        self.test_off_button.configure(state="normal")
+
+    def toDoS(self):
+        print("AAA")
+        global timer_id
+        timer_id = self.after(1000, self.toDoS)
+
+    def stop_sensor(self):
+        global timer_id
+        self.after_cancel(timer_id)
+        timer_id = None
+        self.test_button.configure(state="normal")
+        self.test_off_button.configure(state="disabled")
