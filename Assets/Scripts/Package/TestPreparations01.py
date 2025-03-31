@@ -110,7 +110,7 @@ class TestPreparations01(ctk.CTkFrame):  # class for the TestPreparations01 wind
                                                    "        -> (anschließend Ventil schließen)\n"
                                                    "\n"
                                                    "    6. Prüfstück in das Becken hinablassen\n"
-                                                   "        -> Sensor darf nicht untertauchen"   
+                                                   "        -> Sensor darf nicht untertauchen\n"   
                                                    "\n"
                                                    "    7. Prüfvorgang starten (erst nach Entlüftung!)\n"
                                                    "        -> Weiter drücken\n"
